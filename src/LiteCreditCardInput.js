@@ -60,7 +60,6 @@ const s = StyleSheet.create({
     marginLeft: 20,
   },
   input: {
-    height: 40,
     color: "black",
   },
 });
