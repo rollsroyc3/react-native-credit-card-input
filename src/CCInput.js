@@ -22,7 +22,8 @@ export default class CCInput extends Component {
     value: PropTypes.string,
     placeholder: PropTypes.string,
     keyboardType: PropTypes.string,
-
+    testID: PropTypes.string,
+    
     status: PropTypes.oneOf(["valid", "invalid", "incomplete"]),
 
     containerStyle: ViewPropTypes.style,
@@ -42,6 +43,7 @@ export default class CCInput extends Component {
   static defaultProps = {
     label: "",
     value: "",
+    testID: "input",
     status: "incomplete",
     containerStyle: {},
     inputStyle: {},
@@ -67,12 +69,12 @@ export default class CCInput extends Component {
   _onChange = value => this.props.onChange(this.props.field, value);
 
   render() {
-    const { label, value, placeholder, status, keyboardType,
+    const { label, value, placeholder, testID, status, keyboardType,
             containerStyle, inputStyle, labelStyle,
             validColor, invalidColor, placeholderColor,
             additionalInputProps } = this.props;
     return (
-      <TouchableOpacity onPress={this.focus}
+      <TouchableOpacity testID={testID} onPress={this.focus}
         activeOpacity={0.99}>
         <View style={[containerStyle]}>
           { !!label && <Text style={[labelStyle]}>{label}</Text>}
