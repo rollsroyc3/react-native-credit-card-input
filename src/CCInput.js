@@ -74,11 +74,12 @@ export default class CCInput extends Component {
             validColor, invalidColor, placeholderColor,
             additionalInputProps } = this.props;
     return (
-      <TouchableOpacity testID={testID} onPress={this.focus}
+      <TouchableOpacity onPress={this.focus}
         activeOpacity={0.99}>
         <View style={[containerStyle]}>
           { !!label && <Text style={[labelStyle]}>{label}</Text>}
           <TextInput ref="input"
+            testID={testID}
             {...additionalInputProps}
             keyboardType={keyboardType}
             autoCapitalise="words"
