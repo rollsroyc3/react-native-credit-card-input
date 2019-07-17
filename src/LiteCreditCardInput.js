@@ -148,11 +148,11 @@ export default class LiteCreditCardInput extends Component {
           showRightPart ? s.hidden : s.expanded,
         ]}>
           <CCInput {...this._inputProps("number")}
-            testID="number"
+            testID="creditCard-number"
             keyboardType="numeric"
             containerStyle={s.numberInput} />
         </View>
-        <TouchableOpacity testID="card" onPress={showRightPart ? this._focusNumber : this._focusExpiry }>
+        <TouchableOpacity testID="creditCard-card" onPress={showRightPart ? this._focusNumber : this._focusExpiry }>
           <Image style={s.icon} source={Icons[this._iconToShow()]} />
         </TouchableOpacity>
         <View style={[
@@ -169,10 +169,10 @@ export default class LiteCreditCardInput extends Component {
                 containerStyle={[s.last4Input]} />
             </View>
           </TouchableOpacity>
-          <CCInput testID="expiry" {...this._inputProps("expiry")}
+          <CCInput testID="creditCard-expiry" {...this._inputProps("expiry")}
             keyboardType="numeric"
             containerStyle={s.expiryInput} />
-          <CCInput testID="cvc" {...this._inputProps("cvc")}
+          <CCInput testID="creditCard-cvc" {...this._inputProps("cvc")}
             keyboardType="numeric"
             containerStyle={s.cvcInput} />
         </View>
